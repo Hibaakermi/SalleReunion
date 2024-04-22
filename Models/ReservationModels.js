@@ -1,10 +1,12 @@
 const mongoose = require("mongoose")
 
-const ReservationSchema = new mongoose.Schema(
+const reservationSchema = new mongoose.Schema(
     {
-        date_debut: Date, date_fin: Date, 
-        heure_debut: Date, heure_fin: Date, 
+        date_debut:{ type: Date, required: true },
+        date_fin:   { type: Date, required: true }, 
+        heure_debut: { type: Date, required: true }, 
+        heure_fin: { type: Date, required: true }, 
     }
-    )
+    );
 
-module.exports=mongoose.model("Reservation",ReservationSchema);
+module.exports=mongoose.model("Reservation",reservationSchema);
